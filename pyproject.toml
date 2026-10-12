@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "iantirta-lazy_import"
+version = "0.1.0"
+
+authors = [
+    { name = "Iantirta.com", email = "ian@iantirta.com" },
+]
+maintainers = [
+    { name = "Iantirta.com", email = "ian@iantirta.com" }
+]
+
+description = "A blazing-fast, zero-dependency lazy loading module framework for Python package optimization."
+readme = "README.md"
+requires-python = ">=3.10"
+
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+
+keywords = [
+    "lazy-import",
+    "module-loading",
+    "performance",
+    "optimization",
+    "python-imports",
+    "zero-dependency",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    # None, natively python.
+    # Zero external dependencies. Pure Python standard library.
+]
+
+
+[project.optional-dependencies]
+docs = ["mkdocs-material"]
+test = ["pytest"]
+dev = ["iantirta-lazy_import[test]"]
+
+
+[project.urls]
+Homepage = "https://iantirta.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/iantirta-com/iantirta-lazy_import"
+"Bug Tracker" = "https://github.com/iantirta-com/iantirta-lazy_import/issues"
+Changelog = "https://github.com/iantirta-com/iantirta-lazy_import/blob/main/CHANGELOG.md"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra"]
+markers = [
+    "manual: tests requiring external services or real media downloads",
+]
